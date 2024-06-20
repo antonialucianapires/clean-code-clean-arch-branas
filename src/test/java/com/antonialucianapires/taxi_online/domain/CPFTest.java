@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 public class CPFTest {
 
     @Test
-    void validate() {
+    void validCPF() {
         String[] validCPFs = {"97456321558", "71428793860", "87748248800"};
        assertAll("valid cpf",
        () -> assertNotNull(new CPF(validCPFs[0])),
