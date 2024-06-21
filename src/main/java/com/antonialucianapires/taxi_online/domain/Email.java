@@ -3,6 +3,7 @@ package com.antonialucianapires.taxi_online.domain;
 import java.util.Objects;
 
 public class Email {
+    private final String EMAIL_REGEX = "^(.+)@(.+)$";
     private final String value;
 
     public Email(String rawEmail) {
@@ -17,6 +18,6 @@ public class Email {
 
     private boolean isValid(String rawEmail) {
         if (!Objects.nonNull(rawEmail) || rawEmail.isBlank()) return false;
-        return rawEmail.matches("^(.+)@(.+)$");
+        return rawEmail.matches(EMAIL_REGEX);
     }
 }
