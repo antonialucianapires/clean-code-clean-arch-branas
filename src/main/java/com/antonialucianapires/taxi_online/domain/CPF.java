@@ -12,7 +12,7 @@ public class CPF {
 
     public CPF(String rawCPF) {
         if(!isValid(rawCPF)) 
-            throw new IllegalArgumentException("CPF is invalid.");
+            throw new IllegalArgumentException("Invalid CPF format: " + rawCPF + ".");
         this.value = rawCPF;
     }
 
