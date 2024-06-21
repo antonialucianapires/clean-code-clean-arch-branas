@@ -3,7 +3,7 @@ package com.antonialucianapires.taxi_online.domain;
 import java.util.Objects;
 
 public class Password {
-    private final String PASSWORD_REGEX = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$";
+    private static final String PASSWORD_REGEX = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$";
     private final String value;
 
     public Password(String rawPassword) {

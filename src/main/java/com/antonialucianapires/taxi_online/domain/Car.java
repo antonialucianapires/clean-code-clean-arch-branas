@@ -3,8 +3,8 @@ package com.antonialucianapires.taxi_online.domain;
 import java.util.Objects;
 
 public class Car {
-    private final String PLATE_REGEX = "^[A-Z]{3}[0-9]{4}$";
-    private String plate;
+    private static final String PLATE_REGEX = "^[A-Z]{3}[0-9]{4}$";
+    private final String plate;
 
     public Car(String plate) {
         if(!isValid(plate)) 

@@ -11,10 +11,10 @@ public class CPFTest {
     @Test
     void validCPF() {
         String[] validCPFs = {"97456321558", "71428793860", "87748248800"};
-       assertAll("valid cpf",
-       () -> assertNotNull(new CPF(validCPFs[0])),
-       () -> assertNotNull(new CPF(validCPFs[1])),
-       () -> assertNotNull(new CPF(validCPFs[2])));
+        assertAll("valid cpf",
+        () -> assertNotNull(new CPF(validCPFs[0])),
+        () -> assertNotNull(new CPF(validCPFs[1])),
+        () -> assertNotNull(new CPF(validCPFs[2])));
     }
 
     @Test

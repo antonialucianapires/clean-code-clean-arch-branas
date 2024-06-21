@@ -3,7 +3,7 @@ package com.antonialucianapires.taxi_online.domain;
 import java.util.Objects;
 
 public class Email {
-    private final String EMAIL_REGEX = "^(.+)@(.+)$";
+    private static final String EMAIL_REGEX = "^(.+)@(.+)$";
     private final String value;
 
     public Email(String rawEmail) {

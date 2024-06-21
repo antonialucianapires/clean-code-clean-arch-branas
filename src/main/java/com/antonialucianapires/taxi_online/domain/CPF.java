@@ -5,9 +5,9 @@ import java.util.Optional;
 import java.util.stream.IntStream;
 
 public class CPF {
-    private final int CPF_LENGTH = 11;
-    private final int FACTOR_FIRST_DIGIT = 10;
-    private final int FACTOR_SECOND_DIGIT = 11;
+    private static final int CPF_LENGTH = 11;
+    private static final int FACTOR_FIRST_DIGIT = 10;
+    private static final int FACTOR_SECOND_DIGIT = 11;
     private final String value;
 
     public CPF(String rawCPF) {
