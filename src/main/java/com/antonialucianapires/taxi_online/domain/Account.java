@@ -24,8 +24,8 @@ public class Account {
         @NonNull String name, 
         @NonNull Email email, 
         @NonNull CPF cpf, 
-        @NonNull Car car, 
         @NonNull Password password, 
+        Car car, 
         boolean isPassenger, 
         boolean isDriver) {
         if (!isValidName(name)) {

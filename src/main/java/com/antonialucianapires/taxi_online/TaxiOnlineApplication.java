@@ -9,5 +9,4 @@ public class TaxiOnlineApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(TaxiOnlineApplication.class, args);
 	}
-
 }
