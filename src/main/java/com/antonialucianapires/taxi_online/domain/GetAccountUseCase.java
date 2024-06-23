@@ -5,6 +5,7 @@ import java.util.UUID;
 import com.antonialucianapires.taxi_online.domain.exception.AccountNotFoundException;
 
 import lombok.RequiredArgsConstructor;
+
 @RequiredArgsConstructor
 public class GetAccountUseCase {
     private final AccountRepository accountRepository;

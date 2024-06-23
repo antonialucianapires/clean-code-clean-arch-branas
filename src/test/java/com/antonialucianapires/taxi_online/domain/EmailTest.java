@@ -12,7 +12,7 @@ public class EmailTest {
     void validEmail() {
         String rawEmail = "email@email.com";
         Email email = new Email(rawEmail);
-        assertEquals(rawEmail, email.getValue());
+        assertEquals(rawEmail, email.getValue().get());
     }
 
     @Test

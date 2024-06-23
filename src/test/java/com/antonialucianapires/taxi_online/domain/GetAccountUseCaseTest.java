@@ -1,4 +1,4 @@
-package com.antonialucianapires.taxi_online.domain.usecases;
+package com.antonialucianapires.taxi_online.domain;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -12,13 +12,6 @@ import java.util.UUID;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.antonialucianapires.taxi_online.domain.Account;
-import com.antonialucianapires.taxi_online.domain.AccountRepository;
-import com.antonialucianapires.taxi_online.domain.CPF;
-import com.antonialucianapires.taxi_online.domain.Car;
-import com.antonialucianapires.taxi_online.domain.Email;
-import com.antonialucianapires.taxi_online.domain.GetAccountUseCase;
-import com.antonialucianapires.taxi_online.domain.Password;
 import com.antonialucianapires.taxi_online.domain.exception.AccountNotFoundException;
 
 public class GetAccountUseCaseTest {

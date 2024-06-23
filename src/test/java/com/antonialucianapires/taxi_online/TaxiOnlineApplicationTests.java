@@ -1,13 +1,13 @@
 package com.antonialucianapires.taxi_online;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.testcontainers.junit.jupiter.Testcontainers;
 
-@SpringBootTest
-class TaxiOnlineApplicationTests {
+import com.antonialucianapires.taxi_online.config.IntegrationTest;
 
-	@Test
-	void contextLoads() {
-	}
-
+@Testcontainers
+class TaxiOnlineApplicationTests extends IntegrationTest {
+    @Test
+    void contextLoads() {
+    }
 }

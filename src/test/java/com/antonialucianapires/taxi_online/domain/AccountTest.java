@@ -41,8 +41,6 @@ public class AccountTest {
             () -> assertThrows(NullPointerException.class, () -> 
                 validAccountBuilder().cpf(null).build()),
             () -> assertThrows(NullPointerException.class, () -> 
-                validAccountBuilder().car(null).build()),
-            () -> assertThrows(NullPointerException.class, () -> 
                 validAccountBuilder().password(null).build()));
     }
 
