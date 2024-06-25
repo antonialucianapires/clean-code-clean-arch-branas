@@ -32,9 +32,9 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<ErrorResponse> handleIllegalArgumentException(IllegalArgumentException exception) {
-        log.error("AccountNotFoundException: {}", exception.getMessage());
-        ErrorResponse response = createErrorResponse(HttpStatus.NOT_FOUND, exception.getMessage(), EMPTY_PATH);
-        return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+        log.error("IllegalArgumentException: {}", exception.getMessage());
+        ErrorResponse response = createErrorResponse(HttpStatus.BAD_REQUEST, exception.getMessage(), EMPTY_PATH);
+        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(Exception.class)
