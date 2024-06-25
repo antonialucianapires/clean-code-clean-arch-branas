@@ -30,6 +30,9 @@ public class Account {
         if (!isValidName(name)) {
             throw new IllegalArgumentException("Invalid name format: " + name + ".");
         }
+        if (isDriver && car == null) {
+            throw new IllegalArgumentException("Car is required for drivers.");
+        }
         this.name = name;
         this.email = email;
         this.cpf = cpf;

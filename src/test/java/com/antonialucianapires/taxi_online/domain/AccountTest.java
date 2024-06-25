@@ -3,6 +3,7 @@ package com.antonialucianapires.taxi_online.domain;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -67,5 +68,28 @@ public class AccountTest {
         String emptyName = "";
         assertThrows(IllegalArgumentException.class, () ->
             validAccountBuilder().name(emptyName).build());
+    }
+
+    @Test
+    void shouldCreateAccountForDriverWithCar() {
+        Account account = validAccountBuilder()
+            .isDriver(true)
+            .car(VALID_CAR)
+            .build();
+
+        assertNotNull(account);
+        assertTrue(account.isDriver());
+        assertNotNull(account.getCar());
+    }
+
+    @Test
+    void accountDriverWithoutCar() {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+            validAccountBuilder()
+                .isDriver(true)
+                .car(null)
+                .build();
+        });
+        assertEquals("Car is required for drivers.", exception.getMessage());
     }
 }
