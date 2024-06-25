@@ -20,7 +20,6 @@ public class Account {
 
     @Builder
     protected Account(
-        @NonNull UUID accountId, 
         @NonNull String name, 
         @NonNull Email email, 
         @NonNull CPF cpf, 
@@ -31,7 +30,6 @@ public class Account {
         if (!isValidName(name)) {
             throw new IllegalArgumentException("Invalid name format: " + name + ".");
         }
-        this.accountId = accountId;
         this.name = name;
         this.email = email;
         this.cpf = cpf;
@@ -39,6 +37,7 @@ public class Account {
         this.password = password;
         this.isPassenger = isPassenger;
         this.isDriver = isDriver;
+        this.accountId = UUID.nameUUIDFromBytes(email.getValue().get().getBytes());
     }
 
     private boolean isValidName(String name) {

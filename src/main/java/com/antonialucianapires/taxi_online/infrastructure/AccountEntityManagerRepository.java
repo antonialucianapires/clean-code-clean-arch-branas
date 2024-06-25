@@ -39,7 +39,6 @@ public class AccountEntityManagerRepository implements AccountRepository {
 
     private Account toDomain(AccountEntity entity) {
         return Account.builder()
-            .accountId(entity.getId())
             .name(entity.getName())
             .email(new Email(entity.getEmail()))
             .cpf(new CPF(entity.getCpf()))

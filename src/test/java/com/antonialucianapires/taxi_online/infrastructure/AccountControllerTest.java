@@ -22,6 +22,8 @@ import com.antonialucianapires.taxi_online.domain.Password;
 @Testcontainers
 public class AccountControllerTest extends IntegrationTest {
 
+    private static final Email VALID_EMAIL = new Email("alice.smith@example.com");
+
     @Autowired
     private TestRestTemplate restTemplate;
 
@@ -30,7 +32,7 @@ public class AccountControllerTest extends IntegrationTest {
 
     @Test
     void getAccountById() {
-        UUID accountId = UUID.randomUUID();
+        UUID accountId = UUID.nameUUIDFromBytes(VALID_EMAIL.getValue().get().getBytes());
         Account expected = createExpectedAccount(accountId);
         accountRepository.save(expected);
         ResponseEntity<AccountResponseDTO> result = getAccountResponse(accountId);
@@ -46,9 +48,8 @@ public class AccountControllerTest extends IntegrationTest {
 
     private Account createExpectedAccount(UUID accountId) {
         return Account.builder()
-                .accountId(accountId)
                 .name("Alice Smith")
-                .email(new Email("alice.smith@example.com"))
+                .email(VALID_EMAIL)
                 .cpf(new CPF("97456321558"))
                 .car(new Car("DEF2345"))
                 .password(new Password("Password456"))

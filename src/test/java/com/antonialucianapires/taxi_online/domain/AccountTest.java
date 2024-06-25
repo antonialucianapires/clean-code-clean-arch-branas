@@ -11,15 +11,14 @@ import java.util.UUID;
 import org.junit.jupiter.api.Test;
 
 public class AccountTest {
-    private static final UUID VALID_ACCOUNT_ID = UUID.fromString("d2ba7559-9cd9-4562-8b7d-c3d498098939");
     private static final String VALID_NAME = "John Doe";
     private static final Email VALID_EMAIL = new Email("example@example.com");
+    private static final UUID VALID_ACCOUNT_ID = UUID.nameUUIDFromBytes(VALID_EMAIL.getValue().get().getBytes());
     private static final CPF VALID_CPF = new CPF("97456321558");
     private static final Car VALID_CAR = new Car("ABC1234");
     private static final Password VALID_PASSWORD = new Password("Password123");
     private Account.AccountBuilder validAccountBuilder() {
         return Account.builder()
-                .accountId(VALID_ACCOUNT_ID)
                 .name(VALID_NAME)
                 .email(VALID_EMAIL)
                 .cpf(VALID_CPF)
@@ -32,8 +31,6 @@ public class AccountTest {
     @Test
     void assertNonNulls() {
         assertAll("non-null fields",
-            () -> assertThrows(NullPointerException.class, () -> 
-                validAccountBuilder().accountId(null).build()),
             () -> assertThrows(NullPointerException.class, () -> 
                 validAccountBuilder().name(null).build()),
             () -> assertThrows(NullPointerException.class, () -> 

@@ -32,7 +32,6 @@ public class GetAccountUseCaseTest {
         Car car = new Car("ABC1234");
         Password password = new Password("Password123");
         Account accountExpected = Account.builder()
-            .accountId(id)
             .name("John Doe")
             .email(email)
             .cpf(cpf)
