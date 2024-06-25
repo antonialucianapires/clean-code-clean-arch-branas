@@ -1,0 +1,26 @@
+{
+    "name": "Java Development",
+    "image": "mcr.microsoft.com/devcontainers/java:17",
+    "features": {
+        "ghcr.io/devcontainers/features/java:1": {
+            "version": "17",
+            "installMaven": "true",
+            "installGradle": "false"
+        },
+        "ghcr.io/devcontainers/features/docker-in-docker:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "vscjava.vscode-java-pack",
+                "vscjava.vscode-spring-initializr",
+                "Pivotal.vscode-spring-boot",
+                "redhat.java",
+                "vscjava.vscode-maven",
+                "ms-azuretools.vscode-docker",
+                "koverage.koverage"
+            ]
+        }
+    },
+    "postCreateCommand": "java -version"
+}
